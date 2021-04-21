@@ -1,0 +1,55 @@
+﻿@page
+@model TrainingProject.Pages.UserPage.BioDataListModel
+@{
+    ViewData["Title"] = "Bio-Data List";
+}
+<div class="col-md-12">
+    <div class="card card-primary">
+        <div class="card-header bg-info">
+            <h3 class="card-title">Bio-Data List</h3>
+        </div>
+        <div class="justify-content-center" style="margin-left:40%; margin-bottom:2%; margin-top:2%" id="buttonGrp1">
+            <a asp-page="/UserPage/Biodata" type="button"
+               class="btn btn-primary">New Bio-Data</a>
+        </div>
+        <form method="post">
+            <div id="tableView" style="display: table; margin: 0 auto; width: 90%; ">
+                <table id="paymentHistoryTab" class="table table-bordered" font-size:small">
+                    <thead style="background-color:steelblue;">
+                        <tr>
+                            <th style="width:0.15%; text-align:center; color:white">S/N</th>
+                            <th style="width:20%; text-align:center; color:white">Name</th>
+                            <th style="width:5%; text-align:center; color:white">Phone</th>
+                            <th style="width:8%; text-align:center; color:white">Email</th>
+                            <th style="width:13%; text-align:center; color:white">Date of Birth</th>
+                            <th style="width:20%; text-align:center; color:white">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.BioDataTabList != null)
+                        {
+                            for (int i = 0; i < Model.BioDataTabList.Count; i++)
+                            {
+                                var myList = Model.BioDataTabList[i];
+                                var name = myList.Surname + ' ' + myList.FirstName + ' ' + myList.OtherNames;
+                                <tr style="font-size:small">
+                                    <td class="se_no @i" style="width:0.05%; text-align:left">@(i + 1)</td>
+                                    <td class="name @i" style="width:20%; text-align:left">@name</td>
+                                    <td class="phonenumber @i" style="width:5%; text-align:left">@myList.PhoneNumber</td>
+                                    <td class="email @i" style="width:5%; text-align:left">@myList.Email</td>
+                                    <td class="dateofBirth @i" style="width:8%; text-align:right">
+                                        @myList.DateofBirth.ToString("dd/MM/yyyy").Trim()
+                                    </td>
+                                    <td class="form-inline justify-content-center">
+                                        <a id="edit" class="btn btn-primary" href="./BioData?id=@myList.Id" editSaveLater="@i">Edit</a> |
+                                        <button type="submit" id="delete" class="btn btn-success" printInvoice="@i" asp-route-id="@myList.Id">Delete</button>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>

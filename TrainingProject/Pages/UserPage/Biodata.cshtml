@@ -1,0 +1,196 @@
+﻿@page
+@model TrainingProject.Pages.UserPage.BiodataModel
+@{
+    ViewData["Title"] = "Bio-Data Form";
+}
+
+<div class="col-md-12">
+    <div class="card card-primary">
+        <div class="card-header bg-info">
+            <h3 class="card-title">Bio-Data Form</h3>
+        </div>
+        <form method="post">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Title</label>
+                            <select class="form-control title" asp-for="BioDataTab.Title" style="width:100%">
+                                <option value="0">--Select Title--</option>
+                                <option value="1">Mr.</option>
+                                <option value="2">Mrs.</option>
+                                <option value="3">Dr.</option>
+                                <option value="4">Prof.</option>
+                                <option value="5">Engr.</option>
+                                <option value="6">Rev.</option>
+                                <option value="7">Pharm.</option>
+                                <option value="8">Chief</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Surname</label>
+                            <input class="form-control" asp-for="BioDataTab.Surname" id="surname" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input class="form-control" asp-for="BioDataTab.FirstName" id="firstName" type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>OtherName</label>
+                            <input class="form-control" asp-for="BioDataTab.OtherNames" id="otherName" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Nationality</label>
+                            <select class="form-control jess"  asp-for="BioDataTab.Nationality" style="width:100%">
+                                <option value="0" selected="selected">--Select Nationality--</option>
+                                <option value="1">Nigeria</option>
+                                <option value="2">Ghana</option>
+                                <option value="3">England</option>
+                                <option value="4">France</option>
+                                <option value="5">Belgium</option>
+                                <option value="6">Netherlands</option>
+                                <option value="7">Italy</option>
+                                <option value="8">Brazil</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>State</label>
+                            <select class="form-control" style="width:100%"  asp-for="BioDataTab.State" id="state">
+                                <option value="0" selected="selected">--Select State--</option>
+                                <option value="1">Delta</option>
+                                <option value="2">West Ham</option>
+                                <option value="3">London</option>
+                                <option value="4">Rio</option>
+                                <option value="5">Budapest</option>
+                                <option value="6">Imo</option>
+                                <option value="7">Accra West</option>
+                                <option value="8">Denver</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>L.G.A.</label>
+                            <select class="form-control" asp-for="BioDataTab.LGA" style="width:100%" id="lga">
+                                <option value="0" selected="selected">--Select L.G.A.--</option>
+                                <option value="1">Ethiope East</option>
+                                <option value="2">Ogbaru South</option>
+                                <option value="3">Fulham</option>
+                                <option value="4">Ilupeju</option>
+                                <option value="5">Belgium</option>
+                                <option value="6">Netherlands</option>
+                                <option value="7">Italy</option>
+                                <option value="8">Brazil</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select class="form-control" asp-for="BioDataTab.Gender" style="width:100%" id="gender">
+                                <option value="0" selected="selected">--Select Gender--</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                                <option value="3">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Religion</label>
+                            <select class="form-control" asp-for="BioDataTab.Religion" style="width:100%" id="religion">
+                                <option value="0" selected="selected">--Select Religion--</option>
+                                <option value="1">Christainity</option>
+                                <option value="2">Muslim</option>
+                                <option value="3">Buddist</option>
+                                <option value="4">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Marital Status</label>
+                            <select class="form-control" asp-for="BioDataTab.MaritalStatus" style="width:100%" id="martialStatus">
+                                <option value="0" selected="selected">--Select Status--</option>
+                                <option value="1">Married</option>
+                                <option value="2">Single</option>
+                                <option value="3">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" asp-for="BioDataTab.PhoneNumber" class="form-control" id="phoneNumber" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input class="form-control" asp-for="BioDataTab.Email" id="email" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input class="form-control" asp-for="BioDataTab.DateofBirth" id="dateofBirth" type="date" />
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-left:35%">
+                    <input type="submit" asp-page-handler="Jessica" asp-for="BioDataTab.Id" value="Save Record" class="btn btn-primary" />
+                    <a asp-page="./BiodataList" type="button"
+                       class="btn btn-primary viewList">View List</a>
+                    <input type="button" value="Refresh Page" id="btnRefreshPage" class="btn btn-outline-info" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#btnRefreshPage').on('click', function () {
+            //window.location.reload();
+            $('.title').val("0");
+            $('#surname').val("");
+            $('#firstName').val("");
+            $('#otherName').val("");
+            var de = null;
+            var se = "";
+            $('.jess').val("0");
+            $('#state').val("0");
+            $('#lga').val("0");
+            $('#gender').val("0");
+            $('#religion').val("0");
+            $('#martialStatus').val("0");
+            $('#phoneNumber').val("");
+            $('#dateofBirth').val("");
+            $('#email').val("");
+            return false;
+        });
+        $('.viewList').on('click', function () {
+            baby = "Do you want to view the list?";
+            alert(baby.toUpperCase());
+            //return true;
+        });
+    });
+</script>

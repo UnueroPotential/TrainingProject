@@ -1,0 +1,55 @@
+﻿@page
+@model TrainingProject.Pages.UserPage.ApplicationFormModel
+@{
+    ViewData["Title"] = "Application Form";
+}
+<div class="col-md-12">
+    <div class="card card-primary">
+        <div class="card-header bg-info"> 
+            <h3 class="card-title">Application Form</h3>
+        </div>
+        <form method="post">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Applicant Name</label>
+                            <input asp-for="ApplicationTab.ApplicantName" class="form-control" id="applicantName" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input class="form-control" asp-for="ApplicationTab.ApplicantPhoneNumber" id="phoneNumber" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input class="form-control" asp-for="ApplicationTab.ApplicantEmail" id="email" type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input class="form-control" asp-for="ApplicationTab.ApplicantAddress" id="address" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Position</label>
+                            <input class="form-control" asp-for="ApplicationTab.PositionApply" id="position" type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-left:40%">
+                    <input type="submit" value="Save Application" class="btn btn-primary" />
+                    <a asp-page="./ApplicationList" type="button"
+                       class="btn btn-primary viewList">View Applicant List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
